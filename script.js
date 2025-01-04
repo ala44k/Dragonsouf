@@ -17,28 +17,7 @@ document.addEventListener("touchstart", () => {
 
 function jump() {
     isJumping = true;
-    player.style.animation = "jump 0.7s ease"; // زيادة وقت القفزconst player = document.getElementById("player");
-const obstacle = document.getElementById("obstacle");
-const scoreDisplay = document.getElementById("score");
-    const jumpSound = document.getElementById("jump-sound");
-
-let score = 0;
-let isJumping = false;
-let obstacleSpeed = 3;  // بداية السرعة متوسطة
-let jumpCount = 0;  // عداد القفزات
-
-// القفز عند لمس الشاشة
-document.addEventListener("touchstart", () => {
-    if (!isJumping) {
-        jump();
-    }
-});
-
-function jump() {
-    isJumping = true;
     player.style.animation = "jump 0.7s ease"; // زيادة وقت القفز للحصول على قفز أعلى
-    jumpSound.play();  // تشغيل صوت القفز
-    score++; للحصول على قفز أعلى
     jumpSound.play();  // تشغيل صوت القفز
     score++;
     jumpCount++;
@@ -79,7 +58,7 @@ setInterval(() => {
     }
 }, 50);
 
-    // إعادة اللعبة تلقائيًا
+// إعادة اللعبة تلقائيًا
 function resetGame() {
     // إعادة وضع الحاجز في البداية
     obstacle.style.animation = "none";
@@ -99,4 +78,3 @@ function resetGame() {
         obstacle.style.animation = `moveObstacle ${3 / obstacleSpeed}s linear infinite`;
     }, 50);
 }
-
